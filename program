@@ -1,4 +1,4 @@
-//For writing multiple Lines, We have to use <View>  //(View is component)
+//For writing multiple Lines, We have to use <View>  //(View is component or wrapper)
 //index.tsx file
 
 import React from "react";
