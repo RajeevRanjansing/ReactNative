@@ -2,7 +2,7 @@
 //index.tsx file
 
 import React from "react";
-import { Text , View} from "react-native";
+import { Text , View} from "react-native";      //The first letter of imported item is always written in capital letter
 
 const index=()=>{
 
