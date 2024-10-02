@@ -1,0 +1,18 @@
+import React from "react";
+import { Text , View} from "react-native";
+
+const index=()=>{
+
+  return(
+   <View>                                                    //instead of using <>,<div>,<React.Fragment>, we are using <View>
+      <Text>Hello World </Text>
+      <Text>Myself Rajeev Ranjan</Text>
+      <Text>my father's name is Vinay kumar singh</Text>
+      <Text>my mother name is Savita devi</Text>
+  </View>
+  )
+};
+
+
+
+export default index;
