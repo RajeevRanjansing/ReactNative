@@ -1,4 +1,5 @@
-//For writing multiple Lines
+//For writing multiple Lines, We have to use <View>  //(View is component)
+//index.tsx file
 
 import React from "react";
 import { Text , View} from "react-native";
@@ -16,3 +17,6 @@ const index=()=>{
 };
 
 export default index;
+
+//---------------------------------------Add Style-------------------------------------------
+
