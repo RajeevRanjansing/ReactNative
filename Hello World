@@ -6,7 +6,7 @@ import { Text} from "react-native";
 const index=()=>{
 
   return(
-    <Text>Hello World</Text>
+    <Text>Hello World</Text>        //instead of using <p>,<h1>, we are using <Text> in react-native
   )
 };
 
