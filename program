@@ -10,8 +10,8 @@ const index=()=>{
    <View>                                                    //instead of using <>,<div>,<React.Fragment>, we are using <View>
       <Text>Hello World </Text>
       <Text>Myself Rajeev Ranjan</Text>
-      <Text>my father's name is Vinay kumar singh</Text>
-      <Text>my mother name is Savita devi</Text>
+      <Text>I have been learning React Native since two days</Text>
+      <Text>Multiple Lines</Text>
   </View>
   )
 };
@@ -19,6 +19,7 @@ const index=()=>{
 export default index;
 
 //---------------------------------------Add Style-------------------------------------------
+//1st method
 
 //index.tsx file
 
@@ -48,3 +49,24 @@ const styles = StyleSheet.create({
 
 export default index;
 
+-----------------------**************************------------------
+
+//2nd method
+
+import React from "react";
+import { Text , StyleSheet,View} from "react-native";
+
+const index=()=>{
+
+  return(
+   <View>
+        <Text style={{fontSize:30}}>Hello World </Text>
+        <Text >Myself Rajeev Ranjan</Text>
+        <Text>my father's name is Vinay kumar singh</Text>
+        <Text>my mother name is Savita devi</Text>
+    </View>
+    
+  )
+};
+
+export default index;
