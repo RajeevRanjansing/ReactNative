@@ -1,0 +1,44 @@
+//Get the entered name you have enter
+
+//index.tsx file
+
+import React,{useState} from "react";
+import {Text, View, Button, TextInput ,StyleSheet} from "react-native";
+
+const index=()=>{
+
+  const [initial,final]=useState("");
+ 
+  const display=(e)=>{
+    final(e);
+  }
+
+  const clear=()=>{
+    final("");
+
+  }
+
+
+  return(
+    <View>
+      <Text style={{fontSize:25,marginLeft:20}}>Your Name is {initial}</Text>
+      <TextInput placeholder="Enter your Name" style={styles.textBox} value={initial} onChangeText={display}></TextInput>
+      <Button  title="clear" onPress={clear}></Button>
+
+    </View>
+  )
+}
+
+const styles=StyleSheet.create({
+  textBox:{
+  fontSize:22,
+  color:"black",
+  height:60,
+  width:600,
+  borderWidth:3,
+  borderColor:"red",
+  borderRadius:10,
+  }
+})
+
+export default index;
