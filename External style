@@ -1,0 +1,63 @@
+//External Style
+
+index.tsx file
+
+import React from "react";
+import { View, Text, StyleSheet} from "react-native";
+import ExStyles from "./style";
+
+const index=()=>{
+
+
+  return(
+    <View>
+       <Text style={{color:"red",fontSize:22,backgroundColor:"yellow"}}>Style in React Native</Text>          {/* //camelCase */}
+       <Text style={styles.textBox}>Style in React Native</Text>
+       <Text style={ExStyles.textBox}>React Native</Text>
+	<Text style={styles.input}>Welcome</Text>
+        <Text style={[styles.textBox, ExStyles.textBox]}>I have been learning ReactNative for three days</Text>  {/*for applying both the property, we have to create an array */}
+        <Text style={[styles.textBox, ExStyles.textBox,{marginTop:20}]}>Good Morning</Text>     {/* here, marginTopis an inline style */}
+    </View>
+  )
+}
+
+const styles=StyleSheet.create({
+  textBox:{
+    backgroundColor:"coral",
+    marginTop:10,
+    borderRadius:5,
+    fontSize:20,
+    color:"white",
+    height:80,
+    textAlignVertical:"center",
+    textAlign:"center",
+    borderWidth:2,
+    borderColor:"green",
+    textDecorationLine:"underline",
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+  }
+
+})
+
+
+export default index;
+
+
+//style.js  file
+
+import {StyleSheet} from "react-native";
+
+ export default ExStyles=StyleSheet.create({
+    textBox:{
+      backgroundColor:"red",
+      borderRadius:5,
+      fontSize:20,
+      color:"white",
+      marginTop:10,
+    },
+
+   input:{
+	backgroundColor:"yellow",	  
+  })
