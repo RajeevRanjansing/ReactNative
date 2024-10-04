@@ -1,0 +1,50 @@
+List using FlatList(FlatList is used when we have 1000 or more data. FlatList is bit expensive than map)
+
+//index.tsx file
+
+import React from "react";
+import { View, Text,StyleSheet,FlatList} from "react-native";
+
+const index=()=>{
+
+  const user=[
+    {
+      name:"peter",
+      id:1
+    },
+    {
+      name:"sam",
+      id:2
+    },
+    {
+      name:"Tony",
+      id:3
+    },
+    {
+      name:"stark",
+      id:4
+    },
+    {
+      name:"Anil",
+      id:5
+    }, 
+  ]
+
+  return(
+    <View>
+      <Text style={styles.textBox}>List with flat List</Text>
+    <FlatList data={user} renderItem={({item})=> <Text>{item.name}</Text> 
+    }  />
+    </View>
+  )
+}
+
+const styles=StyleSheet.create({
+  textBox:{
+    fontSize:22,
+    backgroundColor:"coral",
+    color:"white",
+  }
+})
+
+export default index;			//output=peter,sam,Tony,stark,Anil
