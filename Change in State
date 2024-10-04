@@ -1,0 +1,30 @@
+//program1
+
+import React, {useState} from "react";
+import { Text , StyleSheet,View, Button} from "react-native";
+
+const index=()=>{
+
+  const [name, setname]=useState("babu");
+
+  const nameChange=()=>{
+    setname("Rajeev");
+  }
+
+  return(
+   <View>
+        <Text style={styles.textStyle}>Hello {name} </Text>
+        <Button title="Name" onPress={nameChange}></Button>
+    </View>
+    
+  )
+};
+
+const styles = StyleSheet.create({
+    textStyle:{
+      color:"red",
+      marginTop:200,
+    },
+})
+
+export default index;
