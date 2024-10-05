@@ -1,0 +1,90 @@
+//Map function:- This function basically provide loop over the map same as for loop, while loop, do while loop(we have use map instead of for loop,etc because they will not return anything). Map is use when we have 30-40 data
+
+//index.tsx file
+
+import React from "react";
+import { View, Text,StyleSheet,ScrollView} from "react-native";
+
+const index=()=>{
+
+  const user=[
+    {
+      name:"peter",
+      id:"1",
+    },
+    {
+      name:"sam",
+      id:"2",
+    },
+    {
+      name:"Tony",
+      id:"3",
+    },
+    {
+      name:"stark",
+      id:"4",
+    },
+    {
+      name:"Anil",
+      id:"5",
+    }, 
+    {
+      name:"Aman",
+      id:"6",
+    }, 
+    {
+      name:"Anant",
+      id:"7",
+    }, 
+    {
+      name:"Ambani",
+      id:"8",
+    }, 
+    {
+      name:"Anil",
+      id:"9",
+    }, 
+    {
+      name:"Akash",
+      id:"10",
+    },
+     
+    {
+      name:"Ani",
+      id:"11",
+    },
+     
+    {
+      name:"Akshat",
+      id:"12",
+    },
+     
+    {
+      name:"Atul",
+      id:"13",
+    },
+  ]
+
+  return(
+    <ScrollView>
+    <View>
+      <Text style={{fontSize:25}}>List with Map</Text>
+      {
+        user.map((item)=>  <Text style={styles.text}>{item.name}</Text>)        
+      }
+    </View>
+    </ScrollView> 
+    );
+};
+
+const styles=StyleSheet.create({
+  text:{
+    backgroundColor:"coral",
+    marginTop:10,
+    height:60,
+    color:"white",
+    fontSize:30,
+  }
+})
+
+export default index;
