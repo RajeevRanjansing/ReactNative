@@ -1,0 +1,70 @@
+//Lecture no.18
+
+//Section List in React Native
+
+//FlatList is used when we have single array and print one by one value then FlatList is used
+//sectionList is used when we have nested array
+
+If we have an array inside array(that means nested array), By the help of section List we can display(render) the item. Nested array(means 2nd array or inside array alway name is "data")
+
+//code
+
+import React from "react";
+import { Text, View, StyleSheet, SectionList} from "react-native";
+
+const index=()=>{
+
+  // -------1st array--------
+  const user=[
+    {
+      name:"Rajeev",
+      id:"1",
+
+      // ------2nd array-------
+      data:["HTML","CSS"]
+    },
+
+    {
+      name:"Akash",
+      id:"2",
+
+      // ------2nd array-------
+      data:["javascript","java"]
+    },
+
+    {
+      name:"Rajeev",
+      id:"3",
+
+      // ------2nd array-------
+      data:["mySQL","React Native"]
+    },
+  ]
+
+  return(
+    <View>
+
+      <Text style={{fontSize:22}}>Section List in React Native</Text>
+      <SectionList sections={user} renderItem={({item})=><Text>{item}</Text>}
+      
+      renderSectionHeader={({section:{name}})=>(
+        <Text style={{fontSize:22,color:"red"}}>{name}</Text>
+      )}
+
+      />
+    </View>
+  );
+};
+export default index;
+
+//output
+Section List in React Native
+Rajeev
+HTML
+CSS
+Akash
+javascript
+java
+Rajeev
+mySQL
+React Native
