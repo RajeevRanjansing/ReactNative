@@ -1,0 +1,117 @@
+//Dynamic Grid
+
+import React from "react";
+import {View,Text,StyleSheet, ScrollView} from "react-native";
+
+const index=()=>{
+
+  const user=[
+    {
+      name:"peter",
+      id:"1",
+    },
+    {
+      name:"sam",
+      id:"2",
+    },
+    {
+      name:"Tony",
+      id:"3",
+    },
+    {
+      name:"stark",
+      id:"4",
+    },
+    {
+      name:"Anil",
+      id:"5",
+    }, 
+    {
+      name:"Aman",
+      id:"6",
+    }, 
+    {
+      name:"Anant",
+      id:"7",
+    }, 
+    {
+      name:"Ambani",
+      id:"8",
+    }, 
+    {
+      name:"Anil",
+      id:"9",
+    }, 
+    {
+      name:"Akash",
+      id:"10",
+    },
+     
+    {
+      name:"Ani",
+      id:"11",
+    },
+     
+    {
+      name:"Akshat",
+      id:"12",
+    },
+     
+    {
+      name:"Atul",
+      id:"13",
+    },
+
+   {
+      name:"A",
+      id:"14",
+    },
+    
+    {
+      name:"B",
+      id:"15",
+    },
+    
+    {
+      name:"C",
+      id:"16",
+    },
+    
+    {
+      name:"D",
+      id:"17",
+    },
+  ]
+
+
+  return(
+    
+    <View>
+      
+    <Text style={{fontSize:30, flex:1}}>Grid with Dynamic</Text>
+    
+    <View style={{backgroundColor:"coral",height:30, flex:1,flexDirection:"row",flexWrap:"wrap"}}>
+    {
+      user.map((data)=>(<Text style={styles.textBox}>{data.name}</Text>) ) 
+    }
+    </View>
+    
+    </View> 
+  )
+}
+
+const styles=StyleSheet.create({
+  textBox:{
+    backgroundColor:"coral",
+    color:"white",
+    margin:5,
+    padding:5,
+    width:100,
+    height:120,
+    textAlign:"center",
+    textAlignVertical:"center",
+  }
+})
+
+export default index;
+
