@@ -1,0 +1,71 @@
+//Lecture no. 17
+//Component in Loop with FlatList
+
+Q. Can we use custom component inside FlatList
+Ans:-We can use 
+
+
+
+import React from "react";
+import {Text, View,StyleSheet, FlatList} from "react-native";
+
+const index=()=>{
+
+  const user=[
+    {
+      name:"peter",
+      id:"1",
+      email:"abc@test.com",
+    },
+    {
+      name:"sam",
+      id:"2",
+      email:"abc@test.com",
+    },
+    {
+      name:"Tony",
+      id:"3",
+      email:"abc@test.com",
+    },
+    {
+      name:"stark",
+      id:"4",
+      email:"abc@test.com",
+    },
+    {
+      name:"Anil",
+      id:"5",
+      email:"abc@test.com",
+    }, 
+
+  ]
+
+
+  return(
+    <View>
+      <Text style={{fontSize:22}}>Component in Loop with FlatList</Text>
+      <FlatList data={user} renderItem={({item})=>
+      <View style={styles.box}>  
+        <Text style={styles.textBox}>{item.name}</Text> 
+        <Text style={styles.textBox}>{item.email}</Text>
+      </View>} />
+    </View>  
+  )
+}
+
+const styles=StyleSheet.create({
+  textBox:{
+    
+    backgroundColor:"coral",
+    fontSize:24,
+    marginTop:10,
+    flex:1,
+    color:"white",
+    textAlign:"center",
+  },
+  box:{
+    flexDirection:"row",
+    flexWrap:"wrap",
+  }
+})
+export default index;
