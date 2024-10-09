@@ -1,1 +1,39 @@
+//Lecture no.19
+
+//class component in React Native
+
+//1st program
+
+ 
+import React,{Component} from "react";
+import {Text, View, StyleSheet, Button, TextInput} from "react-native";
+
+
+class index extends Component{
+
+ click=()=>{					//No need to write const when making function
+  alert("Button is pressd");
+}
+
+
+fruit=()=>{
+console.warn("Apple");
+}
+
+
+render(){                 //render function is used to return something 
+  return(
+    <View>
+    <Text style={{fontSize:25,backgroundColor:"coral",color:"white",height:40}}>class component in React Native</Text>
+    <TextInput placeholder="Enter your Name"></TextInput>
+    <Button onPress={click} title="Click here" ></Button>
+	<Button onPress={fruit} title="Press here" ></Button>
+    </View>
+  )
+}
+}
+
+export default index;
+
+
 
