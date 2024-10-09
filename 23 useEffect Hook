@@ -1,1 +1,33 @@
+//Lecture no.23
+
+Q. what is useEffect hook?
+
+functional component ke ander hmlog directly lifecycle method ko use nhi kar sakte h.jab bhi hmlog ko functional component ke ander lifecycle method use karna hota h to useEffect hook ka use karte h.
+
+
+import React, {useEffect, useState } from "react";
+import {Text,View, Button} from "react-native";
+
+const index=()=>{
+
+  const [count, setCount]=useState(0);
+
+
+  useEffect(()=>{
+    console.warn("Hello")
+  },[]);                  //blank array means when the component will mount means ye baar baar call nhi hoga
+
+  return(
+    <>
+  <View>
+    <Text style={{fontSize:30,backgroundColor:"lightseagreen",marginTop:40}}>Life Cycle method</Text>
+    <Text>{count}</Text>
+    <Button title="count" onPress={()=>{setCount(2)}}></Button>
+  </View>
+    </>
+  )
+}
+
+export default index;
+
 
