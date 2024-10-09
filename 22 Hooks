@@ -1,1 +1,4 @@
-
+#Hooks are new addition in React 16.8.
+#Hooks are the new feature introduce in react 16.8
+#jaha bhi use keyword dikh jae jaise useState, useEffect ye sab hook hi hai.
+#Hooks are used in functional component not in class based component.
