@@ -1,1 +1,21 @@
+Life cycle
+
+Phases of life cycle methods are
+1. Mounting
+2. Updating
+3. unmounting 
+
+Q. When Life cycle will executed
+Ans:-When component render first time.
+When component update with state.
+When component update with props.
+when component unmount.
+ 
+#Applicationka life cycle method hota h,uske component ka nhi
+
+Q.can we use life cycle method inside functional component and how
+Ans:- Yes, by using hooks me 
+
+Q. when Life cycle method call?
+Ans:- when our component mount, update, unmount
 
