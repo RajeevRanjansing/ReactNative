@@ -1,1 +1,89 @@
+//Lecture no. 24
+
+import React, {useEffect, useState } from "react";
+import {Text,View, Button} from "react-native";
+
+const index=()=>{
+
+  const [count, setcount]=useState(0);
+
+  const [data,setData]=useState(100);
+
+  useEffect(()=>{
+    console.warn(count)
+  },[count]);    
+ //yaha pe count likha hua ye jab count update hoga tvi ye call hoga, agar yaha blank rahega to count aur data dono time call hota
+  //agar hmare paas three state hota aur hm chahte ki do hi pe call ho to [count,2nd wala] likhte.
+
+  // useEffect(()=>{
+  //   console.warn(data)
+  // },[data]);
+  			mlog two bhi useEffect likh sakte hai
+
+  return(
+    <>
+  <View>
+    <Text>{data} Use effect as component {count}</Text>
+
+    <Button title="Update Count" onPress={()=>{setcount(count+1)}}></Button>
+    <Button title="Update Data" onPress={()=>{setData(data+1)}}></Button>
+  </View>
+    </>
+  )
+}
+
+export default index;
+
+--------------------------------
+
+//2nd program
+
+import React,{useState,useEffect} from "react";
+import {Text, View ,Button} from "react-native";
+
+//useEffect using props
+//specific state ke upper useEffect ko call kara sakte h ek hi component ke ander, EK se jayada effect ko bhi call kara sakte h
+//isko bolte h useEffect ko componentDidUpdate use karna
+
+const index=()=>{
+
+  const [count, setcount]=useState(0);
+  const [data, setdata]=useState(100);
+
+  return(
+
+<View>
+    <Text style={{fontSize:20,backgroundColor:"orange"}}>{data }Update component {count}</Text>
+    <Button title="Update Count" onPress={()=>{setcount(count+1)}}></Button>
+    <Button title="Update Data" onPress={()=>{setdata(data+1)}}></Button>
+
+    <User info={{count,data}}></User>
+    </View>
+  )
+}
+
+
+const User=(props)=>{
+
+  // console.warn(props.info)
+  
+  useEffect(()=>{
+    console.warn("run this code when count prop is update")
+  },[props.info.count]);
+
+  
+  useEffect(()=>{
+    console.warn("run this code when data prop is update")
+  },[props.info.data])
+
+  
+  return(
+    <View>
+    <Text>count: {props.info.count}</Text>
+    <Text>data: {props.info.data}</Text>
+    </View>
+  )
+}
+
+export default index;
 
