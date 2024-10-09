@@ -1,1 +1,79 @@
+//Horizontal or vertical scrolling
+
+import React from "react";
+import {View, Text,StyleSheet, FlatList} from "react-native";
+
+const index=()=>{
+
+  const names=[
+    {
+      name:"Rajeev",
+      id:"1",
+    },
+
+    {
+      name:"Rajee",
+      id:"2",
+    },
+    
+    {
+      name:"Raje",
+      id:"3",
+    },
+
+    {
+      name:"Raj",
+      id:"4",
+    },
+
+    {
+      name:"Raj",
+      id:"5",
+    },
+
+    {
+      name:"Ra",
+      id:"6",
+    },
+
+    {
+      name:"R",
+      id:"7",
+    },
+
+    {
+      name:"Rk",
+      id:"8",
+    },
+  ]
+  return(
+    <FlatList 
+    data={names}
+    keyExtractor={(key)=> { return key.id}} 
+    showsVerticalScrollIndicator={true}
+
+    // horizontal         Left to Right
+    //inverted          Right to Left		//Lekin use dono karna h horizontal aur inverted bhi
+    renderItem={({item})=><Text style={styles.textStyle}>{item.name}</Text>}></FlatList>
+
+  )
+  
+
+}
+const styles = StyleSheet.create({
+  textStyle: {
+    fontSize: 20,
+    padding: 30,
+    backgroundColor: "blue",
+    margin: 20,
+    color: "white",
+  },
+  listStyle: {
+    textAlign: "center",
+    margin: 20,
+    padding: 10,
+  },
+});
+
+export default index;
 
