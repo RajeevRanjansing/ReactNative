@@ -1,1 +1,44 @@
+//Lecture no. 25
+
+//Toggle component
+
+import React,{useState} from "react";
+import {View, Button, Text } from "react-native";
+
+const index=()=>{
+
+  const [show,setshow]=useState(true);
+  return(
+    <View>
+      <Text>Show/Hide Toggle</Text>
+      
+      {/* 1st method to write toggle */}
+      {/* <Button title="Hide component" onPress={()=>{setshow(false)}}></Button> */}
+
+      {/* 2nd method to write toggle */}
+      
+      <Button title="Hide component" onPress={()=>{setshow(!show)}}></Button>
+
+      {
+        //1st method to write
+        // show==true? <User /> :null
+
+        //2nd method to write
+
+        show?<User /> :null
+      }
+    </View>
+  )
+}
+
+const User=()=>{
+
+  return(
+    <View>
+      <Text>user component</Text>
+    </View>
+  )
+}
+
+export default index;
 
