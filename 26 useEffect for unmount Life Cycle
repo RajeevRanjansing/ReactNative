@@ -1,1 +1,44 @@
+//Lecture no.26
+//Most important for interview
+
+//useEffect for unmount Life Cycle
+
+import React,{useState,useEffect} from "react";
+import {View, Button, Text } from "react-native";
+
+const index=()=>{
+  
+  const [toggle,settoggle]=useState(true);
+
+  return(
+    <View>
+    <Text>useEffect for unmount component</Text>
+    <Button title="Toggle" onPress={()=>{settoggle(!toggle)}}></Button>
+    {
+      toggle ? <Student /> : null
+    }    
+    </View>
+  )
+}
+
+const Student=()=>{
+
+  let timer=setInterval(()=>{
+    console.warn("Timer called");
+  },2000)
+
+  useEffect(()=>{
+    return ()=>{
+      clearInterval(timer)
+    }
+  })
+
+  return(
+    <View>
+      <Text style={{color:"red",fontSize:30}}>Student</Text>
+    </View>
+  )
+} 
+
+export default index;
 
