@@ -1,1 +1,51 @@
+//Lecture no. 31
+//Activity Indicator(Loader)
+
+Q.can you show more than one loader on display
+Ans:-Yes
+
+#jab bhi activity indicator me size denge to android me true/false or numeric value bhi chalega, lekin ios me size="small/medium/large" dena hoga, waha pe numeric value nhi chalega
+
+import React,{useState} from "react";
+import {View,Text,StyleSheet, ActivityIndicator,Button} from "react-native";
+
+const index=()=>{
+
+    const [state,setstate]=useState(false);
+
+    const start=()=>{
+      setstate(true);
+
+      // let koi api call hone me 3 sec lag raha hai to ye loader sirf 3 sec hi n chalana hoga
+
+        setTimeout(()=>{
+          setstate(false)
+        },3000)
+    }
+
+  return(
+    <View style={styles.parent}>
+    
+    {/* <ActivityIndicator size={80} color="blue" ></ActivityIndicator> */}
+   {/* animating false means it will not show and true means it will show */}
+  
+  {
+    state===true?<ActivityIndicator size={80} color="red" animating={true}></ActivityIndicator>:null
+  }
+  <Button title="show Loader" onPress={start}></Button>
+  </View>
+  )
+}
+
+const styles=StyleSheet.create({
+  parent:{
+    flex:1,
+    justifyContent:"center",
+    alignItems:"center",
+    flexDirection:"column",
+    
+  }
+})
+
+export default index;
 
