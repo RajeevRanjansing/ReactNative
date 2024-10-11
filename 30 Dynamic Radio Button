@@ -1,1 +1,101 @@
 
+import React,{useState} from "react";
+import {Text,View,TouchableOpacity,StyleSheet} from "react-native";
+
+const index=()=>{
+
+  const skill=[
+    {
+      id:"1",
+      name:"HTML",
+      
+    },
+    {
+      id:"2",
+      name:"CSS",
+    },
+    {
+      id:"3",
+      name:"Javascript",
+    },
+    {
+      id:"4",
+      name:"ReactJs",
+    },
+    {
+      id:"5",
+      name:"mySQL",
+    },
+    {
+      id:"6",
+      name:"core java",
+    },
+    {
+      id:"7",
+      name:"React Native",
+    },
+  ]
+
+  const [selectRadio, setselectRadio]=useState(1);
+
+  return(
+    <View style={styles.main}>
+      {
+        skill.map((item)=>
+          <TouchableOpacity  onPress={()=>setselectRadio(item.name)}>
+        {/*1st radio button */}
+    
+        <View style={styles.wrapper}>
+        <View style={styles.radio}>
+          {
+          selectRadio===item.name ? <View style={styles.radioBg}></View> : null
+          }
+          {/* for color */}
+        </View>
+    
+        <Text style={styles.radioText}>{item.name}</Text>
+        </View>
+        </TouchableOpacity>
+          )
+      }
+
+    </View>
+  )
+}
+
+
+const styles=StyleSheet.create({
+  main:{
+    backgroundColor:"lightseagreen",
+    flex:1,
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+  },
+  wrapper:{
+    flexDirection:"row",
+    alignItems:"center",
+  },
+  radioText:{
+     fontSize:20,
+  },
+  radio:{
+    height:30,
+    width:30,
+    borderWidth:2,
+    borderColor:"black",
+    borderRadius:15,        
+    margin:10,
+  },
+  radioBg:{
+    backgroundColor:"yellow",
+    height:26,
+    width:26,
+    borderRadius:15, 
+  }
+})
+
+
+export default index;
+
+
