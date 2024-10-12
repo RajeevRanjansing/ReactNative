@@ -1,1 +1,36 @@
+#Modal is used when we have to show quick information.
+#By default, Modal takes full screen as white.so, we use a property  transparent={true} because Modal pure page ko white na le,aur bhi item bnaye h so dikhae 
+
+Q. how can you make custom modal 
+
+
+
+import React,{useState} from "react";
+import {Text,View,Modal, Button } from "react-native";
+
+const index=()=>{
+
+  const [modal,setmodal]=useState(false);
+
+  const opcl=()=>{
+    setmodal(true)
+  }
+  return(
+    <View style={{flex:1,}}>
+       <Modal transparent={true} animationType="fade" visible={modal}>   {/*yaha pe useState hai  /     animationType="fade/slide"*/}  
+        <View style={{flex:1,justifyContent:"center",alignItems:"center"}}>
+          <View style={{backgroundColor:"white",height:100,width:240,borderRadius:14}}>
+            <Text style={{fontSize:22}}>Hello Everyone</Text>
+            <Button title="close" onPress={()=>setmodal(false)}></Button>
+          </View>
+        </View>
+      </Modal>
+      <View style={{flex:1,justifyContent:"flex-end"}}>
+    <Button title="open" onPress={opcl}></Button>
+    </View>
+    </View>
+  )
+}
+export default index;
+
 
