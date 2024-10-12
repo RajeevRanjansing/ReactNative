@@ -1,1 +1,27 @@
+//pressable
+//pressable ka use isliye kiya jata h, jaha ek hi button click karne se 4-5 jagah kaam karwana hota hai jaise button pe click karne ke baad continue button fire hota hai, aur chor dena pe bullet fire band ho jata hai.
+
+
+import React from "react";
+import {Text,View,StyleSheet,Pressable} from "react-native";
+
+const index=()=>{
+
+  return(
+    <Pressable 
+    // onPress={()=>{  console.warn("Hii")}}
+
+    // onLongPress={()=>{console.warn("hello")}}      long press 0.5sec/500milisec press karke rakhna padta h,
+        //onLongPress ka time increase or decrease karne ke liye kya likhenge
+
+    onPressIn={()=>{console.warn("Press In")}}
+
+    onPressOut={()=>{console.warn("Press Out")}}
+    
+    >
+    <Text style={{marginTop:100,marginLeft:100}}>Rajeev</Text>
+    </Pressable>
+  )
+}
+export default index;
 
