@@ -1,1 +1,32 @@
+//Lecture no. 35
+//Platform in React Native
+//Platform means kon sa operating system hai.
+//Why we need to check platform whether it is Android, ios, window.
+//In general, jab hmlog Rapido, ola, uber me ride karte h to ios me Rs4-5 jayada hota h as compared to Android kyuki ios wale Rs 4-5 afford kar sakte h.
+
+import React from "react";
+import { Text,View,StyleSheet, Platform } from "react-native";
+
+const index=()=>{
+  return(
+    <View>
+      <Text>{Platform.OS}</Text>
+      {
+        Platform.OS=="android"?
+        <View style={{backgroundColor:"red",height:100,width:100}}></View> :
+       <View style={{backgroundColor:"coral",height:100,width:100}}> </View>
+      }
+      <Text style={styles.textBox}>Hello</Text>
+      <Text>{JSON.stringify(Platform)}</Text>			//To check version of react Native
+    </View>
+  )
+}
+const styles=StyleSheet.create({
+  textBox:{
+    color:Platform.OS=="web"?"orange":"red",
+    fontSize:25,
+  }
+})
+export default index;
+
 
