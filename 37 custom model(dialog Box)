@@ -1,1 +1,61 @@
+//Lecture no. 37
+//custom model(Dialog Box)uig using Model component
+
+import React,{useState} from "react";
+import {Text,View,StyleSheet, Button} from "react-native";
+
+
+
+const index=()=>{
+
+  const [show,setshow]=useState(false);
+
+  return(
+    <View style={{flex:1,backgroundColor:"lightseagreen"}}>
+
+{
+  show?
+  <View style={styles.parent}>
+      <View style={styles.dialbox}>
+        <Text style={styles.textBox}>Hii Everyone</Text>
+        <Button title="close Box" onPress={()=>{setshow(false)}}></Button>
+      </View>
+      </View>
+      :
+      null
+}
+      
+      <View style={styles.btn}>
+        <Button title="open Box" onPress={()=>{setshow(true)}}></Button>
+      </View>
+    </View>
+
+  )
+}
+const styles=StyleSheet.create({
+  parent:{
+    flex:1,
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+
+  },
+  dialbox:{
+    backgroundColor:"white",
+    height:"35%",
+    width:"20%",
+    borderRadius:20
+  },
+  textBox:{
+    fontSize:23,
+    textAlign:"center",
+    marginTop:20,
+    marginBottom:10,
+  },
+  btn:{
+    flex:1,
+    justifyContent:"flex-end",
+  }
+})
+export default index;
 
