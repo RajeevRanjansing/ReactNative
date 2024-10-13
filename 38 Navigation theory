@@ -1,1 +1,9 @@
 
+//Lecture no. 38
+//Navigation with React Native (same as React route in ReactJs)(web development me routing kahte h aur app development me Navigation).
+
+Types of Navigation
+1.Stack(Ek page se dusre page me jane ke liye hota h jaise login page, signup page)
+2.Drawer(e.g:-side me menu hota hai us pe click karne pe bahut sara list aata h jaise gmail me hota h)
+3.Tab  e.g:-Whattsapp(chat,status hota hai)
+
