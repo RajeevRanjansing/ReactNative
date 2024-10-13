@@ -1,1 +1,18 @@
+//Lecture no. 36
+//How to Install npm package.
+
+Q.What is package?
+Ans:-Package ek Library or bunch of code hota hai jo specific feature of develop karne ke liy bnaya jata h,Senior developer or big company ke dwara bnaya jata h, Almost package free hota hai,kuch paid hote h.
+
+//1st method
+
+import React from "react";
+import {Text,View,Button, Linking} from "react-native";
+import WebView from "react-native-webview";
+const index=()=>{
+  return(
+    <Button title="click here" onPress={()=>Linking.openURL("https://sgcodes.co.in/youtube")}></Button>
+  )
+}
+export default index;
 
