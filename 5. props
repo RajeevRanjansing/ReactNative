@@ -1,5 +1,6 @@
 we can pass more than one props(props means we can send data from parent to child)
 //Also we can send data from child to parent but it will be complicated.
+//Props ke ander ke component se dusre component me data bhej sakte hai lekin state me aesa nhi hota h.
 
 import React,{useState} from "react";
 import {View, Text , Button} from "react-native";
