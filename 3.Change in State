@@ -16,7 +16,6 @@ const index=()=>{
         <Text style={styles.textStyle}>Hello {name} </Text>
         <Button title="Name" onPress={nameChange}></Button>
     </View>
-    
   )
 };
 
