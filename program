@@ -1,22 +1,3 @@
-//For writing multiple Lines, We have to use <View>  //(View is component or wrapper)
-//index.tsx file
-
-import React from "react";
-import { Text , View} from "react-native";      //The first letter of imported item is always written in capital letter
-
-const index=()=>{
-
-  return(
-   <View>                                                    //instead of using <>,<div>,<React.Fragment>, we are using <View>
-      <Text>Hello World </Text>
-      <Text>Myself Rajeev Ranjan</Text>
-      <Text>I have been learning React Native since two days</Text>
-      <Text>Multiple Lines</Text>
-  </View>
-  )
-};
-
-export default index;
 
 //---------------------------------------Add Style-------------------------------------------
 //1st method
