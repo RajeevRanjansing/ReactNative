@@ -5,7 +5,6 @@ import { View, Text, StyleSheet} from "react-native";
 
 const index=()=>{
 
-
   return(
     <View>
        <Text style={{color:"red",fontSize:22,backgroundColor:"yellow"}}>Style in React Native</Text>          {/* //camelCase */}
