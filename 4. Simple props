@@ -1,0 +1,22 @@
+import React from "react";
+import {Text, View, Button} from "react-native";
+
+const App=()=>{
+  return(
+    <View>
+        <Text>Props in react Native</Text>
+        <Child name={"sidhu"}/>
+    </View>
+  )
+
+};
+
+const Child=(props)=>{
+  return(
+    <View style={{backgroundColor:"lightseagreen",marginTop:15}}>
+    <Text>Child is {props.name}</Text>
+    </View>
+  )
+}
+
+export default App;
