@@ -1,0 +1,39 @@
+import React from 'react';
+import { Text, View } from 'react-native';
+import styles from './style';
+
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.textHello}>Hello</Text>
+      <Text style={styles.textEveryone}>Everyone</Text>
+    </View>
+  );
+};
+
+export default App;
+
+--------------------------style.js-------------------------------------
+
+import { StyleSheet } from 'react-native';
+
+export default StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  textHello: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+    color: '#333333',
+  },
+  textEveryone: {
+    fontSize: 25,
+    textAlign: 'left',
+    margin: 15,
+    color: '#ff6600',
+  },
+});
