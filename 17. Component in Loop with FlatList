@@ -5,7 +5,6 @@ Q. Can we use custom component inside FlatList
 Ans:-We can use 
 
 
-
 import React from "react";
 import {Text, View,StyleSheet, FlatList} from "react-native";
 
