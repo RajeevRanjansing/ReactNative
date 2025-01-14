@@ -7,3 +7,17 @@ Types of Navigation
 2.Drawer(e.g:-side me menu hota hai us pe click karne pe bahut sara list aata h jaise gmail me hota h)
 3.Tab  e.g:-Whattsapp(chat,status hota hai)
 
+
+
+dependencies we have to add in snack dev
+{
+  "dependencies": {
+    "@expo/vector-icons": "^14.0.2",
+    "react-native-paper": "4.9.2",
+    "react-native-screens": "~4.4.0",
+    "@react-navigation/stack": "*",
+    "@react-navigation/native": "*",
+    "react-native-gesture-handler": "~2.20.2",
+    "react-native-safe-area-context": "4.12.0"
+  }
+}
