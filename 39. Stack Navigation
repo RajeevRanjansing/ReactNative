@@ -1,1 +1,93 @@
+//Stack navigation
+
+//Program 1
+
+---------------Home.jsx----------------------
+import React from "react";
+import {Text,View,TouchableOpacity} from "react-native";
+
+const Home=({navigation})=>{
+
+  return(
+    <View>
+    <View>
+    <Text>Welcome to our Home Page</Text>
+    </View>
+
+    <View>
+
+    <TouchableOpacity style={{backgroundColor:"#2196F3",}} onPress={()=>navigation.navigate("Profile")}>
+    <Text>Go to Profile</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity style={{backgroundColor:"coral",}}>
+    <Text onPress={()=>navigation.navigate("Search")}>Go to Search</Text>
+    </TouchableOpacity>
+
+    </View>
+
+    </View>
+    
+  )
+}
+
+export default Home;
+
+
+----------------------Profile.jsx------------------
+
+import * as React from 'react';
+import { View, Text } from 'react-native';
+
+function Profile() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Profile Screen</Text>
+    </View>
+  );
+}
+
+export default Profile;
+
+
+--------------------Search.jsx----------------------
+
+import * as React from 'react';
+import { View, Text } from 'react-native';
+
+function Search() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Search Screen</Text>
+    </View>
+  );
+}
+
+export default Search;
+
+
+------------------App.jsx---------------------------
+
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from './Home.jsx';
+import Profile from './Profile.jsx';
+import Search from './Search.jsx';
+
+const Stack = createStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Search" component={Search} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
 
