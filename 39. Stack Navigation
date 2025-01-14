@@ -91,3 +91,87 @@ function App() {
 
 export default App;
 
+
+------------------------------------------------------------------------------------------------------------------------
+//Stack Navigation
+//Program 2
+
+-------------------------Home.jsx-----------------------
+
+import React from "react";
+import {Text,View,Button} from "react-native";
+
+const Home=({navigation})=>{
+  return(
+    <View>
+    <Text style={{backgroundColor:"coral",fontSize:22,textAlign:"center"}}>Welcome to our Home Page</Text>
+    <Button title="Profile"  onPress={()=>navigation.navigate("Profile")}/>
+    <Button title="Search"  onPress={()=>navigation.navigate("Search")}/>
+    </View>
+
+  )
+}
+export default Home;
+
+----------------------Profile.jsx--------------------------
+
+import React from "react";
+import {Text,View,Button} from "react-native";
+
+const Profile=({navigation})=>{
+  return(
+    <View>
+    <Text>Hii How can I help You</Text>
+    <Text>Tell me!</Text>
+    <Button title="Home"  onPress={()=>navigation.navigate("Home")}/>
+    <Button title="Profile"  onPress={()=>navigation.navigate("Profile")}/>
+    </View>
+
+  )
+}
+export default Profile;
+
+----------------------Search.jsx----------------------------
+
+import React from "react";
+import {Text,View,Button} from "react-native";
+
+const Search=({navigation})=>{
+  return(
+    <View>
+    <Text>Hii How can I help You</Text>
+    <Text>Tell me!</Text>
+    <Button title="Home"  onPress={()=>navigation.navigate("Home")}/>
+    <Button title="Profile"  onPress={()=>navigation.navigate("Profile")}/>
+    </View>
+
+  )
+}
+export default Search;
+
+--------------------App.jsx---------------------------------
+
+import {View} from "react-native";
+import Home from "./Home.jsx";
+import Profile from "./Profile.jsx";
+import Search from "./Search.jsx";
+import {createStackNavigator} from "@react-navigation/stack";
+import {NavigationContainer} from "@react-navigation/native"
+
+
+const Stack=createStackNavigator();
+
+const App=()=>{
+  return(
+    <NavigationContainer>
+    <Stack.Navigator initialRouteName="Home">
+    <Stack.Screen name="Home" component={Home} />
+    <Stack.Screen name="Profile" component={Profile} />
+    <Stack.Screen name="Search" component={Search} />
+    </Stack.Navigator>
+    </NavigationContainer>
+    
+  );
+}
+export default App;
+
