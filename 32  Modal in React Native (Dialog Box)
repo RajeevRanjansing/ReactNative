@@ -34,3 +34,46 @@ const index=()=>{
 export default index;
 
 
+----------------------------------------------------------------------------------------------------------------
+//Program 2
+
+
+import React,{useState} from "react";
+import {Text,View,StyleSheet,Button} from "react-native";
+
+const App=()=>{
+
+  const [close,open]=useState(false);
+
+  const closemodel=()=>{
+    open(false)
+  }
+
+    const openmodel=()=>{
+    open(true)
+  }
+
+  return(
+    <View style={{flex:1}}>
+
+    {
+    close?
+
+    <View style={{backgroundColor:"lightseagreen",}}>
+    <Text style={{fontSize:30,textAlign:"center",marginBottom:30}}>Good Morning</Text>
+    <Button title="Close Box" onPress={closemodel}/>
+    </View>
+    :
+    null
+    }
+    
+
+    <View style={{flex:1,justifyContent:"flex-end"}}>
+    <Button  title="Open Box" onPress={openmodel}/>
+    </View>
+</View>
+  )
+}
+
+
+export default App;
