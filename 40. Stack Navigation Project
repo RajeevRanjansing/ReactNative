@@ -1,1 +1,178 @@
+//Stack Navigation Project
+
+//About Swami Vivekanand Ji
+
+----------------About.jsx-----------------------------
+
+import React from "react";
+import {Text,View,Button,TouchableOpacity,StyleSheet,Image} from "react-native";
+
+const About=({navigation})=>{
+
+  return(
+    <View style={styles.container}>
+
+      <Text style={{fontSize:18,padding:5}}>
+        Swami Vivekananda was a remarkable Indian Hindu monk and a key figure in introducing Indian philosophies of Vedanta and Yoga to the Western world. Known for his inspiring speech at the Parliament of the World's Religions in Chicago in 1893, he emphasized the importance of religious tolerance and universal brotherhood. His teachings and writings continue to inspire millions towards spiritual awakening and self-realization.
+      </Text>
+
+      <View style={styles.button}>
+      <TouchableOpacity style={{backgroundColor:"#2196F3",marginBottom:10,borderRadius:5,width:"60%"}}
+      onPress={()=>navigation.navigate("Home")}>
+      <Text style={{fontSize:20,color:"white",textAlign:"center"}}>Home Page</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={{backgroundColor:"#2196F3",marginBottom:10,borderRadius:5,width:"60%"}}
+      onPress={()=>navigation.navigate("Profile")}>
+      <Text style={{fontSize:20,color:"white",textAlign:"center"}}>Profile Section</Text>
+      </TouchableOpacity>
+    </View>
+    </View>
+  )
+}
+
+const styles=StyleSheet.create({
+  container:{
+    flex:1,
+    backgroundColor:"salmon",
+  },
+  image:{
+    display:"flex",
+    justifyContent:"center",
+    
+  },
+   button:{
+      flex:1,
+      justifyContent:"flex-end",
+      alignItems:"center"
+  }
+})
+
+export default About;
+
+----------------------Home.jsx--------------------------------
+
+import React from "react";
+import {Text,View,Button,TouchableOpacity,StyleSheet} from "react-native";
+
+const Home=({navigation})=>{
+  return(
+    <View style={styles.homePage}>
+      <View>
+      <Text style={styles.textbox}>You are on Home Page</Text>
+      <Text style={styles.textbox}>How can I help You?</Text>
+      </View>
+
+
+    <View style={styles.button}>
+      <TouchableOpacity style={{backgroundColor:"#2196F3",marginBottom:10,borderRadius:5,width:"60%"}} 
+      onPress={()=>navigation.navigate("About")}>
+      <Text style={{fontSize:20,color:"white",textAlign:"center"}}>About Section</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={{backgroundColor:"#2196F3",marginBottom:10,borderRadius:5,width:"60%"}} 
+      onPress={()=>navigation.navigate("Profile")}>
+      <Text style={{fontSize:20,color:"white",textAlign:"center"}}>Profile Section</Text>
+      </TouchableOpacity>
+    </View>
+  </View>
+  )
+}
+
+const styles=StyleSheet.create({
+  textbox:{
+    color:"white",
+    fontSize:22,
+    textAlign:"center",
+    backgroundColor:"lightseagreen",
+  },
+  homePage:{
+    flex:1,
+    backgroundColor:"coral"
+  },
+  button:{
+      flex:1,
+      justifyContent:"flex-end",
+      alignItems:"center"
+  }
+})
+export default Home;
+
+
+-----------------Profile.jsx-----------------------
+
+import React from "react";
+import {Text,View,Button,TouchableOpacity,StyleSheet,Image} from "react-native";
+
+const Profile=({navigation})=>{
+
+  return(
+    <View style={styles.container}>
+    <Text style={{fontSize:22,textAlign:"center"}}>Swami Vivekanand Ji</Text>
+
+    <view style={styles.image}>
+    <Image source={require("image1.jpg")} style={{height:300,width:300}} />
+    </view>
+
+      <View style={styles.button}>
+      <TouchableOpacity style={{backgroundColor:"#2196F3",marginBottom:10,borderRadius:5,width:"60%"}}
+      onPress={()=>navigation.navigate("About")}>
+      <Text style={{fontSize:20,color:"white",textAlign:"center"}}>Go to About</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={{backgroundColor:"#2196F3",marginBottom:10,borderRadius:5,width:"60%"}}
+      onPress={()=>navigation.navigate("Home")}>
+      <Text style={{fontSize:20,color:"white",textAlign:"center"}}>Go to Home</Text>
+      </TouchableOpacity>
+    </View>
+    </View>
+  )
+}
+
+const styles=StyleSheet.create({
+  container:{
+    flex:1,
+    backgroundColor:"coral",
+  },
+  image:{
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+    marginTop:15,
+  },
+   button:{
+      flex:1,
+      justifyContent:"flex-end",
+      alignItems:"center"
+  }
+})
+
+export default Profile;
+
+
+-----------------------App.jsx------------------------------
+
+import {View} from "react-native";
+import Home from "./components/Home.jsx";
+import Profile from "./components/Profile.jsx";
+import About from "./components/About.jsx";
+import {createStackNavigator} from "@react-navigation/stack";
+import {NavigationContainer} from "@react-navigation/native"
+
+
+const Stack=createStackNavigator();
+
+const App=()=>{
+  return(
+    <NavigationContainer>
+    <Stack.Navigator initialRouteName="Home">
+    <Stack.Screen name="Home" component={Home} />
+    <Stack.Screen name="Profile" component={Profile} />
+    <Stack.Screen name="About" component={About} />
+    </Stack.Navigator>
+    </NavigationContainer>
+    
+  );
+}
+export default App;
 
