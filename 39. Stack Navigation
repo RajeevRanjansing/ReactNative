@@ -335,5 +335,67 @@ const App=()=>{
 
 export default App;
 
+--------------------------------------------------------------------------------------------------------------------
+//App.jsx
+
+//Agar heading me button ki jagah TextInput bnana ho to
+
+
+import {View,Button,TextInput} from "react-native";
+import Home from "./Home.jsx";
+import Profile from "./Profile.jsx";
+import Search from "./Search.jsx";
+import {createStackNavigator} from "@react-navigation/stack";
+import {NavigationContainer} from "@react-navigation/native"
+
+
+const Stack=createStackNavigator();
+
+const App=()=>{
+
+  const btnAction=()=>{
+    console.warn("Button Pressed");
+  }
+
+  const Headr=()=>{
+    return(
+    <TextInput placeholder="Search"  />
+    )
+  }
+
+  return(
+    <NavigationContainer>
+
+    <Stack.Navigator initialRouteName="Home">
+
+    <Stack.Screen name="Home" component={Home} 
+    
+    options={{
+      title:"Profile",
+	headerShown:false	//isme header nhi dikhega
+        headerLeft:()=> <Button  title="Left"   onPress={btnAction}/>,
+        headerRight:()=> <Headr />,
+      headerStyle:{
+        backgroundColor:"salmon",	 
+
+      },
+      headerTitleStyle:{		
+        color:"yellow",			
+        fontSize:25
+      }
+    }}
+    />
+    
+    <Stack.Screen name="Profile" component={Profile} />
+    
+    <Stack.Screen name="Search" component={Search} />
+    
+    </Stack.Navigator>
+    </NavigationContainer>
+    
+  );
+}
+
+export default App;
 
 
