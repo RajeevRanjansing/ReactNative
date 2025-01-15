@@ -175,3 +175,55 @@ const App=()=>{
 }
 export default App;
 
+------------------------------Modify According to us------------------------------------------------------
+//App.jsx
+
+//jaise hmlog dekhte h ki heading ke left me left arrow aur Profile/Home aesa kuch likha rahta h,wo bydefault aata h, agar hmko change karna ho to simple hai sirf App.js file me add karna h code. Baaki ka code same hi rahega.
+
+import {View} from "react-native";
+import Home from "./Home.jsx";
+import Profile from "./Profile.jsx";
+import Search from "./Search.jsx";
+import {createStackNavigator} from "@react-navigation/stack";
+import {NavigationContainer} from "@react-navigation/native"
+
+
+const Stack=createStackNavigator();
+
+const App=()=>{
+  return(
+    <NavigationContainer>
+
+    <Stack.Navigator initialRouteName="Home">
+
+    <Stack.Screen name="Home" component={Home} />
+    
+    <Stack.Screen name="Profile" component={Profile} 
+    
+	//ye hmlog sirf Profile ke header me lagaye h, agar hmlog chahte h saare component me lag jae to isi code ko Stack.Navigator me lagana padega,baaki sabka title alag alag likhna padega.
+
+    options={{
+      title:"Profile",			//ye hai title change karne ke liye
+	headerShown:false	//isme header nhi dikhega
+      headerStyle:{
+        backgroundColor:"salmon",	//ye header ka background color change karne ke liye 
+      },
+      headerTitleStyle:{		//Text ka color ke liye
+        color:"yellow",			
+        fontSize:25
+      }
+    }}
+    />
+    
+    <Stack.Screen name="Search" component={Search} />
+    
+    </Stack.Navigator>
+    </NavigationContainer>
+    
+  );
+}
+
+export default App;
+
+
+
