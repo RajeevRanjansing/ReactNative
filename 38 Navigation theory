@@ -7,6 +7,9 @@ Types of Navigation
 2.Drawer(e.g:-side me menu hota hai us pe click karne pe bahut sara list aata h jaise gmail me hota h)
 3.Tab  e.g:-Whattsapp(chat,status hota hai)
 
+3.1 Bottom Tab Navigation(means option bottom me rahega jaise amazon me dekhte h n option niche me rahta h jaise Home Transaction etc)
+3.2 Top Tab Navigation (means top me option rahega jaise WhatsApp me rahta h n chat status call upper me usko top tab navigation bolte h)
+
 
 
 dependencies we have to add in snack dev
