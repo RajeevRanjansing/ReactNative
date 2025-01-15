@@ -280,6 +280,60 @@ const App=()=>{
 
 export default App;
 
+--------------------------------------------------------------------------------------------------------------------
+//App.jsx
+
+//Agar hm chahte h ki header me left arrow ko hata kar Button bna de to App.jsx me ye code likhna h
+
+
+import {View,Button} from "react-native";
+import Home from "./Home.jsx";
+import Profile from "./Profile.jsx";
+import Search from "./Search.jsx";
+import {createStackNavigator} from "@react-navigation/stack";
+import {NavigationContainer} from "@react-navigation/native"
+
+
+const Stack=createStackNavigator();
+
+const App=()=>{
+
+  const btnAction=()=>{
+    console.warn("Button Pressed");
+  }
+  return(
+    <NavigationContainer>
+
+    <Stack.Navigator initialRouteName="Home">
+
+    <Stack.Screen name="Home" component={Home} 
+    
+    options={{
+      title:"Profile",
+        headerLeft:()=> <Button  title="Left" onPress={btnAction}/>,			//ios ke liye headerLeft aur android ke liye headerTitle(to left me aayega)
+        headerRight:()=> <Button  title="Right" onPress={btnAction}/>,
+      headerStyle:{
+        backgroundColor:"salmon",	 
+
+      },
+      headerTitleStyle:{		
+        color:"yellow",			
+        fontSize:25
+      }
+    }}
+    />
+    
+    <Stack.Screen name="Profile" component={Profile} />
+    
+    <Stack.Screen name="Search" component={Search} />
+    
+    </Stack.Navigator>
+    </NavigationContainer>
+    
+  );
+}
+
+export default App;
 
 
 
