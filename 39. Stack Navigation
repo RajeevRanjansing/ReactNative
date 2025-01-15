@@ -226,4 +226,60 @@ const App=()=>{
 export default App;
 
 
+---------------------------------------------------------------------------------------------------------------------
+//App.jsx
+
+
+//Hmlog saare component ka heading ka background aur font ek jaisa rakhte h, uske liye kaise code likhna h.
+
+App.js
+
+import {View} from "react-native";
+import Home from "./Home.jsx";
+import Profile from "./Profile.jsx";
+import Search from "./Search.jsx";
+import {createStackNavigator} from "@react-navigation/stack";
+import {NavigationContainer} from "@react-navigation/native"
+
+
+const Stack=createStackNavigator();
+
+const App=()=>{
+  return(
+    <NavigationContainer>
+
+    <Stack.Navigator initialRouteName="Home"
+     screenOptions={{			
+//agar saare page ke liye ek hi theme lagana h to Stack.Navigator me code dalo. options ke jagah screenOptions likhna padega.
+      
+     headerStyle:{
+        backgroundColor:"salmon",
+      },
+      headerTitleStyle:{
+        color:"yellow",
+        fontSize:25
+      }
+    }}>
+
+    <Stack.Screen name="Home" component={Home} 
+    options={{
+      title:"ourHome",			
+//title alag ke liye sabke liye alag alag dena padega, agar chahte ho to,nhi to bydefault wahi rahega.
+    }}
+    />
+    
+    <Stack.Screen name="Profile" component={Profile} />
+    
+    <Stack.Screen name="Search" component={Search} />
+    
+    </Stack.Navigator>
+    </NavigationContainer>
+    
+  );
+}
+
+export default App;
+
+
+
 
