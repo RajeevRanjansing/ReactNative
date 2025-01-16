@@ -18,3 +18,50 @@ dependencies you have to add
   }
 }
 
+------------------App.jsx----------------------------
+
+import React from "react";
+import {Text,View,StyleSheet,SafeAreaView} from "react-native";
+import {NavigationContainer} from "@react-navigation/native";
+import {createMaterialTopTabNavigator} from "@react-navigation/material-top-tabs";
+
+const Tab=createMaterialTopTabNavigator();
+
+const App=()=>{
+  return(
+    <NavigationContainer>
+    <Tab.Navigator style={{marginTop:20}}>
+    <Tab.Screen name="login" component={login} />
+    <Tab.Screen name="Signup" component={Signup} />
+    <Tab.Screen name="Home" component={Home} />
+    </Tab.Navigator>
+    </NavigationContainer>
+  )
+}
+
+const login=()=>{
+  return(
+    <SafeAreaView>
+    <Text>Login Page</Text>
+    
+    </SafeAreaView>
+  )
+}
+
+const Signup=()=>{
+  return(
+    <SafeAreaView>
+    <Text>Signup Page</Text>
+    </SafeAreaView>
+  )
+}
+
+const Home=()=>{
+  return(
+    <SafeAreaView>
+    <Text>Home Page</Text>
+    </SafeAreaView>
+  )
+}
+
+export default App;
