@@ -1,1 +1,43 @@
+//Bottom Tab Navigation means option bottom me rahega uspe click karna padega
+Q. what are the command to clean cache
+Ans:- npm start --clean-cache
+
+dependencies you have to add in package.json file
+ "@react-navigation/bottom-tabs": "*",
+
+import React from "react";
+import {Text,View,StyleSheet} from "react-native";
+import {NavigationContainer} from "@react-navigation/native";
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+
+const Tab=createBottomTabNavigator();
+
+const App=()=>{
+  return(
+    <NavigationContainer>
+    <Tab.Navigator>
+    <Tab.Screen name="login" component={login} />
+    <Tab.Screen name="Signup" component={Signup} />
+    </Tab.Navigator>
+    </NavigationContainer>
+  )
+}
+
+const login=()=>{
+  return(
+    <View>
+    <Text>Login Page</Text>
+    </View>
+  )
+}
+
+const Signup=()=>{
+  return(
+    <View>
+    <Text>Signup Page</Text>
+    </View>
+  )
+}
+
+export default App;
 
