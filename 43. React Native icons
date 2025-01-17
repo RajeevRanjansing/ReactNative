@@ -11,5 +11,7 @@ Aese karke options={{
 
 ye sample ready ho gya, ab jo icon lagana h, usko isse replace kar dena
 
-3. Ab icon lagane ke liye search karenge react native vector icon(oblador wale pe), ab icon search karna, yaha pe Ant Design ya koi bhi select karna, aur code ke upper me FontAwesome ke jagah Ant Design Paste kar dena, aur jaha lagana h waha pe icon name ki jagah jaise "home" likh dena, ho jayega.
+3. Ab icon lagane ke liye search karenge react native vector icon(oblador wale pe), ab icon search karna,
+yaha pe Ant Design ya koi bhi select karna, aur code ke upper me FontAwesome ke jagah Ant Design Paste kar dena,
+aur jaha lagana h waha pe icon name ki jagah jaise "home" likh dena, ho jayega.
 
