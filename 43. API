@@ -1,1 +1,53 @@
+//Lecture no.46
+
+
+//jitne bhi framework ya library h jaise Reactjs,Angular,React Native wo directly database se connect nhi hoti h. 
+//Na hi Android ya ios application directly databse se connect ho sakti h.
+
+Ye sabko database se connect karne ke liye API ki jaroorat padti h.
+Q. API bnti kaisi h
+Ans:- jo bhi server side language hai jaise python Java Node.js php, isse API bnate h.wo backend developer ka kaam hota h.
+
+//API bnakar UI ke saath integrate karte h.
+
+
+
+import React,{useEffect,useState} from "react";
+import {Text,View,SafeAreaView} from "react-native";
+
+const App=()=>{
+
+  const [data,setdata]=useState(undefined);
+
+  const getAPI=async()=>{			//async isliye likhe h kyuk await use karna h 
+    const url="https://jsonplaceholder.typicode.com/posts/1";
+    let result=await fetch(url);			//fetch method api ko call karne ke liye hota h			
+
+
+//await isliye likhe h agar hmare pass bahut saare data h,to usme time lagega n to hamara program aage jae, aur jab ye api load ho jaye tab dikhaye,nhi to hamara program yaha pe ruka rahega. 
+
+
+    result=await result.json();
+    setdata(result);
+  }
+  useEffect(()=>{
+    getAPI();
+  },[])            //blank array ka matlab h ki jab hmara component update ho tab render ho, sirf ek baar 
+
+
+  return(
+    <SafeAreaView>
+    <Text>Hello</Text>
+    {
+      data?
+      <View>
+      <Text>{data.id}</Text>
+      <Text>{data.title}</Text>
+      </View>
+      :null
+    }
+    </SafeAreaView>
+  )
+}
+export default App;
 
