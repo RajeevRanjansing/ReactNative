@@ -1,1 +1,15 @@
+react native vector icons
+					
+1.Sabse pahle search karenge react native vector icons (npm wale pe click karenge) uske scroll down karna h to (Icon component aayega) import Icon from 'react-native-vector-icons/FontAwesome';   usko apne code me paste karna h upper me.
+
+2.  const <Icon name="rocket" size={30} color="#900" />;  jaha icon lagana h waha isko paste karna 
+Aese karke options={{
+            	tabBarIcon: () => (
+              	<Icon name="search1" size={24} color="red" />
+            )
+          }}
+
+ye sample ready ho gya, ab jo icon lagana h, usko isse replace kar dena
+
+3. Ab icon lagane ke liye search karenge react native vector icon(oblador wale pe), ab icon search karna, yaha pe Ant Design ya koi bhi select karna, aur code ke upper me FontAwesome ke jagah Ant Design Paste kar dena, aur jaha lagana h waha pe icon name ki jagah jaise "home" likh dena, ho jayega.
 
