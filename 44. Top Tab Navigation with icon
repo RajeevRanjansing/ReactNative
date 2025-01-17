@@ -1,1 +1,109 @@
+//Top Tap Navigation with icon code
+//jab bhi icon lagana ho saare me lagana padega
+
+--------------App.jsx-------------------------
+
+import React from "react";
+import { Text, View, StyleSheet, SafeAreaView } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import Icon from 'react-native-vector-icons/AntDesign';
+
+const Tab = createMaterialTopTabNavigator();
+
+const App = () => {
+  return (
+    <NavigationContainer >
+      <Tab.Navigator style={{ marginTop: 100 }}>
+        <Tab.Screen
+          name="login"
+          component={Login}
+          options={{
+            tabBarIcon: () => (
+              <Icon name="home" size={24} color="red" />
+            )
+          }}
+        />
+        <Tab.Screen
+          name="Signup"
+          component={Signup}
+          options={{
+            tabBarIcon: () => (
+              <Icon name="adduser" size={24} color="red" />
+            )
+          }}
+        />
+        <Tab.Screen
+          name="Home"
+          component={Home}
+          options={{
+            tabBarIcon: () => (
+              <Icon name="home" size={24} color="red" />
+            )
+          }}
+        />
+        <Tab.Screen
+          name="Search"
+          component={Search}
+          options={{
+            tabBarIcon: () => (
+              <Icon name="search1" size={24} color="red" />
+            )
+          }}
+        />
+        <Tab.Screen
+          name="chat"
+          component={Chat}
+          options={{
+            tabBarIcon: () => (
+              <Icon name="message1" size={24} color="red" />
+            )
+          }}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
+  )
+}
+
+const Login = () => {
+  return (
+    <SafeAreaView>
+      <Text>Login Page</Text>
+    </SafeAreaView>
+  )
+}
+
+const Signup = () => {
+  return (
+    <SafeAreaView>
+      <Text>Signup Page</Text>
+    </SafeAreaView>
+  )
+}
+
+const Home = () => {
+  return (
+    <SafeAreaView>
+      <Text>Home Page</Text>
+    </SafeAreaView>
+  )
+}
+
+const Search = () => {
+  return (
+    <SafeAreaView>
+      <Text>Search Page</Text>
+    </SafeAreaView>
+  )
+}
+
+const Chat = () => {
+  return (
+    <SafeAreaView>
+      <Text>Chat Page</Text>
+    </SafeAreaView>
+  )
+}
+
+export default App;
 
