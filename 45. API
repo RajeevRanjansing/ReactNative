@@ -19,7 +19,7 @@ const App=()=>{
 
   const [data,setdata]=useState(undefined);
 
-  const getAPI=async()=>{			//async isliye likhe h kyuk await use karna h 
+  const getAPI=async()=>{			//async isliye likhe h kyuki await use karna h 
     const url="https://jsonplaceholder.typicode.com/posts/1";
     let result=await fetch(url);			//fetch method api ko call karne ke liye hota h			
 
