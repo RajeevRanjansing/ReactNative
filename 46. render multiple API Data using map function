@@ -1,1 +1,38 @@
+//render multiple API Data using map function
+
+import React,{useEffect,useState} from "react";
+import {Text, View,ScrollView} from "react-native";
+
+const App=()=>{
+
+  const [data,setdata]=useState([]);
+
+
+  const getAPI=async()=>{
+    const url="https://jsonplaceholder.typicode.com/posts";
+    let result=await fetch(url);
+    result=await result.json();
+    setdata(result)
+  }
+
+  useEffect(()=>{
+    getAPI();
+  },[])
+
+  return(
+    <ScrollView verical style={{marginTop:50}}>
+    {
+      data.map((item)=>
+      <View style={{height:100,width:"100",backgroundColor:"coral",borderColor:"black",borderWidth:2,marginLeft:2,display:"flex",justifyContent:"center",alignItems:"center"}}>
+      <Text style={{textAlign:"center",fontSize:25}}>{item.id}</Text>
+      <Text style={{textAlign:"center",fontSize:10}}>{item.title}</Text>
+      </View>   
+      )   
+    }
+    </ScrollView>
+            :
+      null
+  )
+}
+export default App;
 
