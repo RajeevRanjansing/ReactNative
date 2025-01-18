@@ -1,1 +1,45 @@
+//render multiple API Data using FlatList
+
+import React,{useEffect,useState} from "react";
+import {Text, View,ScrollView,FlatList} from "react-native";
+
+const App=()=>{
+
+  const [data,setdata]=useState([]);
+
+
+  const getAPI=async()=>{
+    const url="https://jsonplaceholder.typicode.com/posts";
+    let result=await fetch(url);
+    result=await result.json();
+    setdata(result)
+  }
+
+  useEffect(()=>{
+    getAPI();
+  },[])
+
+  return(
+    <View>
+    {
+      data?
+      
+      <View style={{backgroundColor:"coral",marginTop:50,borderColor:"black"}}>
+      <FlatList data={data}
+      vertical
+      renderItem={({item})=>
+      <View>
+      <Text>{item.id}</Text>
+      </View>
+      }  
+      
+      />
+      </View>
+      :
+      null
+    }
+    </View>
+  )
+}
+export default App;
 
