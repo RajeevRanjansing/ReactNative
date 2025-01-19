@@ -17,3 +17,33 @@ Add dependencies
   }
 }
 
+
+//sabse pahle hmko ek folder bnana h,uske ander db.json file me apne se api bnana padega
+
+{
+    "user":[
+    {
+        "id":1,
+        "name":"Rajeev"
+    },
+    {
+        "id":2,
+        "name":"Raj"
+    },
+    {
+        "id":3,
+        "name":"Rajesh"
+    },
+    {
+        "id":4,
+        "name":"Rajat"
+    },
+    {
+        "id":5,
+        "name":"Rakesh"
+    }
+]
+}
+
+ab hmko cmd se live server open rakhna padega.
+
