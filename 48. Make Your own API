@@ -45,5 +45,5 @@ Add dependencies
 ]
 }
 
-ab hmko cmd se live server open rakhna padega.
+ab hmko cmd me command run karna padega cd desktop/ cd api/ (json-server --watch db.json) se live server open rakhna padega.
 
