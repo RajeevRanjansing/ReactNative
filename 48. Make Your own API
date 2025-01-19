@@ -1,1 +1,19 @@
+//Lecure no. 49
+
+//Make your own API
+
+Add dependencies
+
+{
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "json-server": "^0.16.3",
+    "@expo/vector-icons": "^14.0.2",
+    "react-native-paper": "4.9.2",
+    "react-native-screens": "~4.4.0",
+    "@react-navigation/native": "*",
+    "@react-navigation/native-stack": "*",
+    "react-native-safe-area-context": "4.12.0"
+  }
+}
 
