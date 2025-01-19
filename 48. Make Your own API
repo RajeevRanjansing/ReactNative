@@ -47,3 +47,52 @@ Add dependencies
 
 ab hmko cmd me command run karna padega cd desktop/ cd api/ (json-server --watch db.json) se live server open rakhna padega.
 
+snack dev me App.js file me
+
+import React,{useEffect,useState} from "react";
+import {Text,View,StyleSheet,FlatList} from "react-native";
+
+const App=()=>{
+
+  const [data,setData]=useState(undefined);
+
+  const getAPI=async()=>{
+    const url="http://192.168.98.78:3000/user";		//yaha pe cmd me ipconfig se IP address IPv4 paste karna h, aur 3000 Port pe chal raha h, aur db.json me user name se bnaya hu wo.
+    let result=await fetch(url);
+    result=await result.json();
+    setData(result);
+  }
+
+  useEffect(()=>{
+    getAPI();
+  },[]);
+
+  return(
+    <View style={{backgroundColor:"lightseagreen",marginBottom:20}}>
+    <View><Text style={{textAlign:"center",marginTop:10,fontSize:30}}>API</Text>    </View>
+  
+    {
+      data?
+      <View>
+      <FlatList  
+      data={data}
+      renderItem={({item})=>(
+        <View style={{margin:10,backgroundColor:"coral"}}>
+        <Text>{item.id}</Text>
+        <Text>{item.name}</Text>
+        </View>
+      )}
+      />
+      </View>
+
+      :
+      null
+    }
+
+    </View>
+          
+  )
+}
+export default App;
+
+
