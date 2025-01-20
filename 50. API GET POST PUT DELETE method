@@ -1,1 +1,38 @@
 
+1. GET method is use to get the data from the server.
+Agar hmko saare data dekhna h to simply URL ikh dena jaise http://localhost:3000/user daal dena aur send option pe clik kar dena.uske baad ye saare data show kar dega.
+Agar hmko koi ek data dekhna h to simply http://localhost:3000/user/1 ,ye 1st wala ka data dikha dega  
+
+
+
+
+2. POST method is used to add data. For Example: aapke paas 10 data aur aap usme aur data add karna chahte h to POST method ka use hota h.
+sabse pahle postman me GET ki jagah POST select karna, uske bagal me URL hai n,Body select karna,raw select karna, Phir JSONmilega, usme karna ye hai ki jaha tumko data add karna h n, wo URL daal dena jaise http://localhost:3000/user.
+Ab niche aakar data add kar dena, usme id compulsory dena h, aur Send option pe click kar dena.
+
+{
+    "id":14,
+    "name":"Peter",
+    "age":32,
+    "email":"Peter@test.com"
+}
+
+Aese add karna h.
+
+
+3.PUT method ka use hota h kisi data me update karne ke liye.
+
+//sabse pahle put method select karenge http://localhost:3000/user/2 jisme update karna h uska id likh dena, isme second wala ko update hoga, Body Select karna, uske baad raw aur phir JSON rahega
+
+    {
+      "id": "2",
+      "name": "Rakshit"
+    } 
+
+Aesa likhna h, aur send pe click karna h.
+
+
+4. DELETE
+
+sabse pahle DELETE select karna h aur URL likhna h http://localhost:3000/user/12 jo delete karna h wo id likhna h, aur send pe click karna wo delete ho jaega.
+
