@@ -13,3 +13,94 @@
     "react-native-reanimated": "~3.16.1"
   }
 }
+
+---------------------------------------------------------
+    //HomePage.jsx
+
+import React from "react";
+import {Text,View,Button} from "react-native";
+
+const HomePage=({navigation})=>{
+
+  return(
+    <View>
+    This is our HomePage
+    </View>
+  )
+}
+export default HomePage;
+
+--------------------------------------------------------
+//Profile.jsx
+
+import React from "react";
+import {Text,View,Button} from "react-native";
+
+const Profile=({navigation})=>{
+
+  return(
+    <View>
+    <Text>This is our Profile</Text>
+    </View>
+  )
+}
+export default Profile;
+
+-------------------------------------------------------
+//Search.jsx
+
+import React from "react";
+import {Text,View,Button} from "react-native";
+
+const Search=({navigation})=>{
+
+  return(
+    <View>
+    This is our Search
+    </View>
+  );
+}
+export default Search;
+
+----------------------------------------------------
+//App.jsx
+
+import React from "react";
+import {Text,View} from "react-native"; 
+import { NavigationContainer } from "@react-navigation/native"; 
+import { createDrawerNavigator } from "@react-navigation/drawer"; 
+import Profile from "./Profile.jsx"; 
+import HomePage from "./HomePage.jsx"; 
+import Search from "./Search.jsx"; 
+
+const App=({navigation})=>{ 
+  
+  const Drawer=createDrawerNavigator(); 
+  
+  return( <NavigationContainer> 
+  <Drawer.Navigator initialRouteName="HomePage"
+  screenOptions={{
+    drawerStyle:{
+      backgroundColor:"white",    //drawer wo open hota h n uska background color
+      width:240,
+    },
+    headerStyle:{
+      backgroundColor:"lightseagreen",  // saare component ke header ka color
+    },
+    drawerLabelStyle:{
+      color:"green"            //drawer Navigation jab open hota h n, aur wo HomePage Profile likha  rahta h n uska color
+    },
+    headerTintColor:"#fff",    
+    headerTitleColor:"center"    //wo icon aur aur uske bagal wale ka color
+  }}
+
+  > 
+  <Drawer.Screen name="HomePage" component={HomePage} />
+  <Drawer.Screen name="Profile" component={Profile} /> 
+  <Drawer.Screen name="Search" component={Search} /> 
+  </Drawer.Navigator> 
+  </NavigationContainer> 
+  ) 
+  } 
+  
+  export default App
