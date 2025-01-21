@@ -1,1 +1,39 @@
+//Lecture no. 52
+
+//jab hmlog App.js file me API data likh kar, usko add karana h.
+
+import React,{useState} from "react";
+import {Text,View,TouchableOpacity,StyleSheet,Button} from "react-native";
+
+const App=()=>{
+
+  const [data,setData]=useState([]);
+
+  const getAPI=async()=>{
+
+    const data={
+      "id":15,
+      "name":"Hitesh"
+    }
+
+    const url="http://localhost:3000/user";
+
+    let result=await fetch(url,{
+      method:"POST",
+      headers:{
+        "content-Type":"application/json"
+      },
+      body:JSON.stringify(data)
+    })
+    result=await result.json();
+    setData(result);
+  }
+
+  return(
+    <View>
+      <Button title="Save Data" onPress={getAPI}/>
+    </View>
+  )
+}
+export default App;
 
