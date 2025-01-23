@@ -50,7 +50,34 @@ const App=()=>{
       },
      body:JSON.stringify({name:name,age:age,email:email})
     });
-
-
   }
+
+  return(
+    <SafeAreaView>
+    <TextInput placeholder="Enter Name" 
+    style={styles.textBox}
+    value={name}
+    onChangeText={(name)=>setName(name)}
+    />
+    {nameError? (<Text style={styles.errorText}>Please enter valid name</Text>):null}
+
+    <TextInput placeholder="Age" 
+    style={styles.textBox}
+    value={age}
+    onChangeText={(age)=>setAge(age)}
+    />
+    {ageError? (<Text style={styles.errorText}>Please enter valid age</Text>):null}
+
+    <TextInput placeholder="Email" 
+    style={styles.textBox}
+    value={email}
+    onChangeText={(email)=>setEmail(email)}
+    />
+    {emailError? (<Text style={styles.errorText}>Please enter valid email</Text>):null}
+
+    <Button title="Save Data" onPress={saveData}/>
+
+    </SafeAreaView>
+  )
+}
 
