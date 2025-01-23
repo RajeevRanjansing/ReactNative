@@ -1,1 +1,21 @@
+//Lecture no. 55
+//isme hm API ko style kiye h, aur update aur delete button lagaye h.
+
+import React,{useEffect,useState} from "react";
+import {Text, View,ScrollView,Button} from "react-native";
+
+const App=()=>{
+
+  const [data,setdata]=useState([]);
+
+  const getAPI=async()=>{
+    const url="http://192.168.98.78:3000/user";
+    let result=await fetch(url);
+    result=await result.json();
+    setdata(result)
+  }
+
+  useEffect(()=>{
+    getAPI();
+  },[])
 
