@@ -81,3 +81,20 @@ const App=()=>{
   )
 }
 
+const styles=StyleSheet.create({
+  textBox:{
+    margin:10,
+    paddingLeft:5,
+    height:40,
+    borderColor:"black",
+    borderWidth:2,
+    marginBottom:5,
+
+  },
+  errorText:{
+    color:"red",
+    marginLeft:10,
+    
+  }
+})
+export default App;
