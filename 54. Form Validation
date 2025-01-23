@@ -1,1 +1,56 @@
+//Lecture 54
+
+//Form Validation  
+
+import React,{useState} from "react";
+import {Text,View,StyleSheet,SafeAreaView,TextInput,Button} from "react-native";
+
+const App=()=>{
+
+  const [name,setName]=useState("");
+  const [age,setAge]=useState("");
+  const [email,setEmail]=useState("");
+
+  const [nameError,setnameError]=useState(false);
+   const [ageError,setageError]=useState(false);
+    const [emailError,setemailError]=useState(false);
+
+  const saveData=async()=>{
+
+    // if(!name){
+    //   setnameError(true);
+    // }else{
+    //   setnameError(false);
+    // }
+
+    // if(!age){
+    //   setageError(true)
+    // }else{
+    //   setageError(false);
+    // }
+
+    // if(!email){
+    //   setemailError(true)
+    // }else{
+    //   setemailError(false);
+    // }
+
+//isko ternery se likhna ho to aesa likhna padega
+
+	!name ? setnameError(true) : setnameError(false);
+	!age ? setageError(true) : setageError(false);
+	!email ? setemailError(true) : setemailError(false);
+
+   const url="http://localhost:3000/user";
+
+    let result=await fetch(url,{
+      method:"POST",
+      headers:{
+        "content-Type":"application/json",
+      },
+     body:JSON.stringify({name:name,age:age,email:email})
+    });
+
+
+  }
 
