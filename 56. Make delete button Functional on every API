@@ -1,1 +1,33 @@
+//Lecture no. 56
+//API me jo delete button ko functional bnana h.
+
+import React, { useEffect, useState } from "react";
+import { Text, View, ScrollView, Button } from "react-native";
+
+const App = () => {
+  const [data, setData] = useState([]);
+
+  const getAPI = async () => {
+    const url = "http://192.168.98.78:3000/user";
+    let result = await fetch(url);
+    result = await result.json();
+    setData(result);
+  };
+
+  const deleteUser = async (id) => {
+    const url = "http://192.168.98.78:3000/user";
+    let result = await fetch(`${url}/${id}`, {
+      method: "DELETE",
+    });
+    result = await result.json();
+    if (result) {
+      alert("User deleted");
+      getAPI();
+    }
+  };
+
+  useEffect(() => {
+    getAPI();
+  }, []);
+
 
