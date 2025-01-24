@@ -31,3 +31,45 @@ const App = () => {
   }, []);
 
 
+  return (
+    <ScrollView style={{ marginTop: 50, backgroundColor: "coral" }}>
+      <View
+        style={{
+          backgroundColor: "lightseagreen",
+          flexDirection: "row",
+          justifyContent: "space-around",
+          borderColor: "black",
+          borderWidth: 2,
+          marginTop: 10,
+        }}
+      >
+        <Text style={{ textAlign: "center", fontSize: 25, flex: 1 }}>Id</Text>
+        <Text style={{ textAlign: "center", fontSize: 25, flex: 1 }}>Name</Text>
+        <Text style={{ textAlign: "center", fontSize: 25, flex: 3 }}>
+          Operation
+        </Text>
+      </View>
+      {data.length
+        ? data.map((item) => (
+            <View
+              key={item.id}
+              style={{
+                backgroundColor: "lightseagreen",
+                flexDirection: "row",
+                justifyContent: "space-around",
+                borderColor: "black",
+                borderWidth: 2,
+                marginTop: 10,
+              }}
+            >
+              <Text style={{ textAlign: "center", fontSize: 25 }}>
+                {item.id}
+              </Text>
+              <Text style={{ textAlign: "center", fontSize: 25 }}>
+                {item.Name}
+              </Text>
+              <Button title="Update" />
+              <Button title="Delete" onPress={() => deleteUser(item.id)} />
+            </View>
+          ))
+
