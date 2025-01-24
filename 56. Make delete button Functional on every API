@@ -72,4 +72,10 @@ const App = () => {
               <Button title="Delete" onPress={() => deleteUser(item.id)} />
             </View>
           ))
+           : null}
+    </ScrollView>
+  );
+};
+
+export default App;
 
