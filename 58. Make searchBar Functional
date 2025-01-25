@@ -31,3 +31,33 @@ const App = () => {
     }
   };
 
+
+  return (
+    <SafeAreaView>
+      <TextInput
+        style={styles.textBox}
+        placeholder="Search"
+        onChangeText={searchUser}
+      />
+
+      {filteredData.map((item, index) => (
+        <View key={index}>
+          <Text>{item.Name}</Text>
+          <Text>{item.Age}</Text>
+        </View>
+      ))}
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  textBox: {
+    height: 45,
+    borderColor: "black",
+    borderWidth: 2,
+    paddingLeft: 5,
+    marginTop: 50,
+  },
+});
+
+export default App;
