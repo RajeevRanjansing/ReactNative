@@ -22,3 +22,17 @@ const App=()=>{
 
   };
 
+return(
+    <View>
+      <TextInput  placeholder="Enter Your Text" 
+      ref={myRef}		//reference is myRef
+      placeholderTextColor="#999"
+      style={styles.textBox}
+      />
+
+      <TouchableOpacity style={styles.button} onPress={handleRef}>
+        <Text style={styles.btn}>SUBMIT</Text>
+      </TouchableOpacity>
+    </View>
+  )
+}
