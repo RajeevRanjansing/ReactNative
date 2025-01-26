@@ -36,3 +36,23 @@ return(
     </View>
   )
 }
+
+const styles=StyleSheet.create({
+  button:{
+    backgroundColor:"orange",
+    marginTop:20
+  },
+  btn:{
+    textAlign:"center",
+    fontSize:20,
+  },
+  textBox:{
+    borderWidth:2,
+    borderColor:"black",
+    height:40,
+    marginTop:20,
+    padding:5
+  }
+})
+
+export default App;
