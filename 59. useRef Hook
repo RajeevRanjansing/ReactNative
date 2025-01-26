@@ -1,1 +1,24 @@
+//Lecture no. 61
+//TechZeen 27   
+
+//useRef Hook	important for interview
+
+//useRef Hook react native me nhi hota h, lekin react native internally react.js hi use karta h.
+//useRef k use tab karte h jab hmko button pe click karne pe kuch color change ho jaye, fontSize increase ho jae,etc
+//ye bina re-render kiye, change kar deta h.
+
+import React,{useRef} from "react";
+import {Text,View,TextInput,TouchableOpacity,StyleSheet} from "react-native";
+
+const App=()=>{
+
+  const myRef=useRef();	//iska matlab ye hota h ki useRef ka power ab myRef ko de diye matlab jo kaam useRef karta tha ab wo myRef karega 
+
+  const handleRef=()=>{
+	myRef.current.focus();	//iska matlab ye hota h input field me blink karta hua line dikhta h n, ki likhne ka shuru karo wo wala.
+    myRef.current.setNativeProps({
+      text:"Rajeev",
+    });
+
+  };
 
