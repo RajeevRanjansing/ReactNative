@@ -1,1 +1,16 @@
+Q. Async Storage kya hota h?
+Ans:- jab bhi hmlog ko app me koi data permanent store karana padta h to Async storage ka use karte h. Async Storage ek local database ki tarah kaam karta h.
+
+Q. ISko Asyn hi kyu bola jata h sync kyu nhi.
+Ans:-Kyuki ye Asynchronize tarike se kaam karta h, jaise hamara API Asynchronize tarike se kaam karta h n,isko hmlog hamesha Promise ke saath hi use karte h.
+
+//Async Storage se data delete nhi hota h chahe tum app close kar do 
+
+//Async Storage se data delete karna ka tarika 1. Application ko uninstall kar do, to data delete ho jaega.  2. Aap apne application ka cache remove kar do 3. removeItem method ka use karo to async storage se data delete ho jata h.
+
+//Hmlog Async storage ka use chota sa file ko store karane ke liye hi karte h, jaise name. Secure data ko store nhi karate h isme jaise password.
+
+//Async Storage ka use isliye karte h taaki user ko baar baar login nhi karna pade jaise Instagram,Facebook me hmlog ek baar login kar dete h,  uske baad ho jata h n, hmlog ko baar baar login nhi n karna padta h,hmlog ka username password Async Storage me store ho jata h.
+  
+//Heavy file ke liye Database ka use karte h.
 
